@@ -1,4 +1,27 @@
 <h1>Cryptocrumbs News Application</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p>Developed in Rails 7</p>
 
-<%= @news %>
+<% @news["Data"] %>
+
+<div class="container">
+<div class="row">
+
+<% for x in @news["Data"] %>
+
+<div class="col-sm">
+<div class="card" style="width: 18rem;">
+  <img src="<%= x["imageurl"] %>" class="card-img-top" alt="<%= x["source"] %>">
+  <div class="card-body">
+    <h5 class="card-title"><%= x["title"] %></h5>
+    <p class="card-text"><%= x["body"] %></p>
+  </div>
+  <div class="card-body">
+    <a href="<%= x["url"] %>" class="card-link">Read More</a>
+  </div>
+</div>
+<br/>
+</div>
+
+<% end %>
+</div>
+</div>
