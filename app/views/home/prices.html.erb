@@ -1,3 +1,17 @@
-<h1> Prices Page </h1>
+<h1> Quote Lookup </h1>
 
-<%= @symbol %>
+
+<br/>
+
+<% @quote["DISPLAY"] %>
+
+<% @quote["DISPLAY"].each do |key, value| %>
+<div class="mt-4 p-5 bg-dark text-white rounded">
+  <h1><%= key %></h1>
+  <p>Current Price: <%= value["USD"]["PRICE"] %></p>
+  <p>24 Hr High<%= value["USD"]["HIGHDAY"] %></p>
+  <p>24 Hr Low<%= value["USD"]["LOWDAY"] %></p>
+  <p>Market Cap <%= value["USD"]["MKTCAP"] %></p>
+</div>
+
+<% end %>
